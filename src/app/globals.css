@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* ------------------ aqui empiezan mi css personalizados---------------------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .mask-brush {
+    mask-image: url('/images/mask-brush.webp');
+    -webkit-mask-image: url('/images/mask-brush.webp');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    mask-position: center;
+    -webkit-mask-position: center;
+  }
+}
