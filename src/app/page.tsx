@@ -11,9 +11,9 @@ export default function Home() {
     <div className="pt-20">
       <section id="inicio"><Hero /></section>
       <section id="sobre-mi"><About /></section>
+      <section id="habilidades"><Skills /></section>
       <section id="empresas"><CompaniesSection /></section>
       <section id="proyectos"><ProjectsSection /></section>
-      <section id="habilidades"><Skills /></section>
       <section id="contacto"><Contact /></section>
     </div>
   );
