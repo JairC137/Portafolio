@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
-import { link } from "fs";
 
 const links = [
   { name: "Inicio", href:"/" },
