@@ -1,0 +1,31 @@
+.bubble {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 6s ease-in-out infinite alternate;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .bubble {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
