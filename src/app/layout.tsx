@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import Navbar from "@/components/Navbar";
+import ClientLayout from "./client-layout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -9,16 +9,16 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Jair Olmos | Portafolio",
-  description: "Consultor de tecnologia, especializado en soluciones basadas en datos.",
+  description: "Consultor de tecnología, especializado en soluciones basadas en datos.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className={poppins.className}>
-        <Navbar />
-        <main>{children}</main>
+    <html lang="es" className={poppins.className}>
+      <body>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
 }
+

@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 
+
 export default function Home() {
   return (
     <div className="pt-20">

@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
+import { link } from "fs";
 
 const links = [
-  { name: "Inicio", href: "#inicio" },
+  { name: "Inicio", href:"/" },
   { name: "Sobre mí", href: "#sobre-mi" },
   { name: "Empresas", href: "#empresas" },
   { name: "Proyectos", href: "#proyectos" },

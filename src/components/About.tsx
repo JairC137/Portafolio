@@ -78,10 +78,10 @@ export default function About() {
         ))}
       </div>
 
-      {/* BOTÓN FINAL */}
+      {/* BOTÓN FINAL */} 
       <div className="mt-10 text-center">
         <a
-          href="/sobre-mi"
+          href="/about"
           className="inline-block px-6 py-3 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition"
         >
           Más sobre mí
