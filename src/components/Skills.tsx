@@ -135,7 +135,7 @@ export default function Skills() {
 
   return (
     <section id="habilidades" className="skills-section" style={{ backgroundColor: '#0f172a' }}>
-      <h2 className="skills-title">Habilidades</h2>
+      <h2 className="skills-title">Habilidades adquiridas por experiencia laboral</h2>
       <div className="skills-filters">
         {['Todos', ...Object.keys(categories)].map(cat => (
           <button
