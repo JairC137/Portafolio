@@ -11,7 +11,7 @@ import './Skills.css';
 
 const categories = {
   Lenguajes: [SiPython, SiR, SiTypescript, SiJavascript],
-  BasesDeDatos: [SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiRedis, SiSnowflake],
+  DataBase: [SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiRedis, SiSnowflake],
   Visualizacion: [SiTableau, SiQlik, SiGrafana],
   Cloud: [SiGooglecloud, SiAmazon],
   ETL: [SiApacheairflow, SiApachekafka],
