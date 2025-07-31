@@ -1,45 +1,69 @@
-'use client';
+"use client";
 
 import {
-  SiPython,
-  SiJavascript,
-  SiMongodb,
-  SiPostgresql,
-  SiQualtrics
+  SiPython, SiJavascript, SiMongodb, SiPostgresql, SiQualtrics
 } from "react-icons/si";
 import {
-  FaDatabase,
-  FaChartBar,
-  FaChartLine,
-  FaMicrosoft,
-  FaGithub,
-  FaDocker,
-  FaLinux
+  FaDatabase, FaChartBar, FaChartLine, FaMicrosoft,
+  FaGithub, FaDocker, FaLinux
 } from "react-icons/fa";
-
 import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 
 const icons = [
-  SiPython,
-  SiJavascript,
-  SiMongodb,
-  SiPostgresql,
-  FaDatabase,
-  FaChartBar,
-  FaChartLine,
-  FaMicrosoft,
-  SiQualtrics,
-  FaDocker,
-  FaLinux,
-  FaGithub
+  { icon: SiPython, label: "Python" },
+  { icon: SiJavascript, label: "JavaScript" },
+  { icon: SiMongodb, label: "MongoDB" },
+  { icon: SiPostgresql, label: "PostgreSQL" },
+  { icon: FaDatabase, label: "Database" },
+  { icon: FaChartBar, label: "ChartBar" },
+  { icon: FaChartLine, label: "ChartLine" },
+  { icon: FaMicrosoft, label: "Microsoft" },
+  { icon: SiQualtrics, label: "Qualtrics" },
+  { icon: FaDocker, label: "Docker" },
+  { icon: FaLinux, label: "Linux" },
+  { icon: FaGithub, label: "GitHub" },
 ];
 
 export default function About() {
+  const iconContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = iconContainerRef.current;
+    const iconElements = container?.querySelectorAll(".about-icon");
+
+    const handleMouseMove = (e: MouseEvent) => {
+      iconElements?.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width / 2);
+        const dy = e.clientY - (rect.top + rect.height / 2);
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = 150;
+        const ratio = dist < maxDist ? (maxDist - dist) / maxDist : 0;
+
+        (el as HTMLElement).style.transform = `translate(${dx * ratio * -0.4}px, ${dy * ratio * -0.4}px)`;
+      });
+    };
+
+    const handleMouseLeave = () => {
+      iconElements?.forEach((el) => {
+        (el as HTMLElement).style.transform = `translate(0px, 0px)`;
+      });
+    };
+
+    container?.addEventListener("mousemove", handleMouseMove);
+    container?.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      container?.removeEventListener("mousemove", handleMouseMove);
+      container?.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
-    <section id="sobre-mi" className="bg-[#0a0a0a] text-white py-20 px-6 overflow-hidden">
+    <section id="sobre-mi" className="bg-[#0f172a] text-white py-20 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        
-        {/* FOTO animada */}
+        {/* FOTO */}
         <motion.div
           className="flex justify-center md:justify-center w-full md:w-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -56,7 +80,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* TEXTO animado */}
+        {/* TEXTO */}
         <motion.div
           className="text-center md:text-left"
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +92,6 @@ export default function About() {
           <p className="text-gray-400 text-sm mb-6">
             Consultor tecnológico orientado a datos y soluciones automatizadas
           </p>
-
           <div className="space-y-6 text-gray-300 text-base leading-relaxed max-w-lg mx-auto md:mx-0">
             <p>
               Soy ingeniero en computación por el IPN con experiencia en proyectos de gran escala en el sector público y privado. He trabajado con PEMEX Logística en procesos ETL y visualización de KPIs, y en proyectos internacionales con Qualtrics.
@@ -83,24 +106,27 @@ export default function About() {
         </motion.div>
       </div>
 
-      {/* ÍCONOS animados */}
+      {/* ÍCONOS con interacción */}
       <motion.div
+        ref={iconContainerRef}
         className="mt-12 flex flex-wrap justify-center gap-6 text-3xl text-blue-500"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.4 }}
         viewport={{ once: true }}
       >
-        {icons.map((Icon, idx) => (
+        {icons.map(({ icon: Icon, label }, idx) => (
           <Icon
             key={idx}
-            className="hover:text-white transition-transform hover:scale-110 cursor-pointer"
-            title={Icon.name?.replace("Fa", "").replace("Si", "") || "Skill"}
+            className="about-icon transition-transform hover:text-white hover:scale-110 cursor-pointer"
+            title={label}
+            aria-label={label}
+            role="img"
           />
         ))}
       </motion.div>
 
-      {/* BOTÓN animado */}
+      {/* BOTÓN */}
       <motion.div
         className="mt-10 text-center"
         initial={{ opacity: 0, y: 20 }}

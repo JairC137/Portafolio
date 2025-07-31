@@ -1,31 +1,74 @@
-.bubble {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 9999px;
+.skills-section {
+  background: #2f4476;
+  color: #111;
+  padding: 5rem 1rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.skills-filters {
   display: flex;
-  align-items: center;
   justify-content: center;
-  animation: float 6s ease-in-out infinite alternate;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-20px) rotate(5deg);
-  }
+.skills-filter-btn {
+  background: #e0e0e0;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-shadow: inset 0 -2px 3px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .bubble {
-    width: 50px;
-    height: 50px;
-    font-size: 1.25rem;
-  }
+.skills-filter-btn:hover {
+  background: #d4d4d4;
+}
+
+.skills-filter-btn.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.pecera-container {
+  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  height: 580px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05), 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.burbuja {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2563eb;
+  font-size: 30px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.burbuja:hover {
+  transform: scale(1.15);
+  z-index: 3;
 }
