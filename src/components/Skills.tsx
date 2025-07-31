@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   SiPython, SiMongodb, SiPostgresql, SiTableau, SiApacheairflow,
   SiGooglecloud, SiAmazon, SiDocker, SiGrafana, SiPandas, SiNumpy,
-  SiScikitlearn, SiJupyter, SiR, SiPostman, SiMysql,
- SiApachekafka, SiSnowflake, SiQlik, SiFirebase, SiRedis,
+  SiScikitlearn, SiJupyter, SiR, SiPostman, SiMysql, SiApachekafka, SiSnowflake, SiQlik, SiFirebase, SiRedis,
   SiTypescript, SiJavascript, SiHtml5, SiCss3, SiNextdotjs
 } from "react-icons/si";
 import './Skills.css';
@@ -74,8 +73,8 @@ export default function Skills() {
   useEffect(() => {
     const interval = setInterval(() => {
       setBubbles(prev => prev.map(b => {
-        let newX = b.x + b.dx;
-        let newY = b.y + b.dy;
+        const newX = b.x + b.dx;
+        const newY = b.y + b.dy;
         let newDx = b.dx;
         let newDy = b.dy;
 
