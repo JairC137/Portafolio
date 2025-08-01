@@ -34,7 +34,7 @@ export default function Navbar() {
       document.removeEventListener("keydown", onKey);
     };
   }, [menuOpen]);
- 
+
   return (
     <>
       {/* ---------- BARRA FIJA ---------- */}
@@ -44,7 +44,7 @@ export default function Navbar() {
           aria-label="Menú principal"
           className="w-[90%] flex items-center justify-between px-6 py-3 rounded-full
                      backdrop-blur-md bg-white/40 dark:bg-white/20
-                     border border-white/30 shadow-xl ease-in-out animate-fade-in-down"
+                     border border-white/30 shadow-xl"
         >
           {/* Logo / nombre */}
         <Link

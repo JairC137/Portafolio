@@ -9,7 +9,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
-      {pathname === "/about" ? <SimpleNavbar /> : <Navbar />}
+      {pathname === "/" ? <Navbar /> : <SimpleNavbar />}
       {children}
     </>
   );
