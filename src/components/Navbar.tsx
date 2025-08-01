@@ -54,34 +54,22 @@ export default function Navbar() {
           Jair Olmos
         </Link>
 
-
+ 
 
           {/* Links desktop */}
-          <ul className="hidden md:flex space-x-6">
+          <div className="hidden md:flex gap-6 text-sm font-medium text-gray-700">
             {links.map(({ name, href }) => (
-              <li key={name}>
-                <Link
-                  href={href}
-                  className={`
-                    relative inline-block transition-colors duration-200
-                    ${pathname === href
-                      ? "text-blue-700"
-                      : "text-black dark:text-black hover:text-blue-700"}
-                    after:content-[''] after:absolute after:left-0 after:-bottom-1
-                    after:h-[2px] after:bg-blue-600 after:origin-left
-                    after:transition-transform after:duration-300
-                    ${
-                      pathname === href
-                        ? "after:scale-x-100"
-                        : "after:scale-x-0 hover:after:scale-x-100"
-                    }
-                  `}
-                >
-                  {name}
-                </Link>
-              </li>
+              <Link
+                key={name}
+                href={href}
+                className={`hover:text-blue-600 transition ${
+            pathname === href ? "text-blue-700 font-bold" : ""
+                }`}
+              >
+                {name}
+              </Link>
             ))}
-          </ul>
+          </div>
 
           {/* Botón hamburguesa */}
           <button
