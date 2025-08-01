@@ -148,7 +148,7 @@ export default function Skills() {
         ))}
       </div>
       <div
-        className="pecera-container"
+        className="pecera-container transition-shadow hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
         ref={containerRef}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
