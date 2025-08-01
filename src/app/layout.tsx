@@ -9,6 +9,9 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Jair Olmos | Portafolio",
+    icons: {
+    icon: "/favicon.ico",
+  },
   description: "Consultor de tecnología, especializado en soluciones basadas en datos.",
 };
 
