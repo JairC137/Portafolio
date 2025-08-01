@@ -24,7 +24,7 @@ type CategoryKey = keyof typeof categories;
 
 const generateIcons = (filter: string) => {
   const set = filter === 'Todos' ? allIcons : categories[filter as CategoryKey] || [];
-  const repetitions = 2;
+  const repetitions = 1;
   return Array.from({ length: repetitions })
     .flatMap(() => set)
     .map((Icon, i) => ({ Icon, name: Icon.name || `Tech ${i}` }));
