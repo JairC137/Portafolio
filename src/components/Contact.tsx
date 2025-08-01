@@ -5,9 +5,9 @@ import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { SiWhatsapp } from "react-icons/si";
 
 const socials = [
-  { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/jolmodev" },
+  { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/jolmosdev" },
   { icon: FaGithub,   label: "GitHub",   href: "https://github.com/JairC137" },
-  { icon: FaTwitter,  label: "Twitter",  href: "https://twitter.com/jolmodev" },
+  { icon: FaTwitter,  label: "Twitter",  href: "https://twitter.com/jolmosdev" },
   { icon: SiWhatsapp, label: "WhatsApp", href: "https://wa.me/5215555555555" },
 ];
 
