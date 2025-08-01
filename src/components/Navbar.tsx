@@ -9,13 +9,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /* ------------------ ENLACES ------------------ */
 const links = [
-  { name: "Inicio",        href: "#inicio" },
-  { name: "Sobre mí",      href: "#sobre-mi" },
-  { name: "Empresas",      href: "#empresas" },
-  { name: "Proyectos",     href: "#proyectos" },
-  { name: "Habilidades",   href: "#habilidades" },
-  { name: "Contacto",      href: "#contacto" },
-  { name: "Blog",          href: "/blog" },
+  { name: "Inicio",      href: "#inicio" },
+  { name: "Sobre mí",    href: "#sobre-mi" },
+  { name: "Empresas",    href: "#empresas" },
+  { name: "Proyectos",   href: "#proyectos" },
+  { name: "Habilidades", href: "#habilidades" },
+  { name: "Contacto",    href: "#contacto" },
+  { name: "Blog",        href: "/blog" },
 ];
 
 /* ------------------ NAVBAR ------------------- */
@@ -23,48 +23,58 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  /* Esc + bloquear scroll cuando el menú está abierto */
+  /* ESC + bloquear scroll cuando el menú móvil está abierto */
   useEffect(() => {
     if (!menuOpen) return;
+
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
     document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", onKey);
+    window.addEventListener("keydown", onKey);
+
     return () => {
+      window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
-      document.removeEventListener("keydown", onKey);
     };
   }, [menuOpen]);
 
   return (
     <>
       {/* ---------- BARRA FIJA ---------- */}
-      <header className="fixed top-4 inset-x-0 z-50 flex justify-center">
+      <header className="fixed inset-x-0 top-4 z-50 flex justify-center">
         <nav
-          role="navigation"
           aria-label="Menú principal"
-          className="w-[90%] flex items-center justify-between px-6 py-3 rounded-full
-                     backdrop-blur-md bg-white/40 dark:bg-white/20
-                     border border-white/30 shadow-xl"
+          className="w-[70%] max-w-6xl flex items-center justify-between px-8 py-3
+                     rounded-full bg-white/15 dark:bg-[#ffffff14]
+                     backdrop-blur-xl backdrop-saturate-150
+                     ring-1 ring-white/30 dark:ring-white/20
+                     shadow-[0_2px_6px_rgba(0,0,0,0.25)]
+                     transition-shadow duration-300
+                     hover:shadow-[0_0_40px_rgba(255,255,255,0.25)]"
         >
           {/* Logo / nombre */}
-        <Link
-          href="/"
-          className="text-xl font-semibold text-gray-800 hover:text-blue-700 transition-colors duration-200"
-        >
-          Jair Olmos
-        </Link>
-
- 
+          <Link
+            href="/"
+            className="text-xl font-semibold text-[#0f172a]
+                       drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]
+                       hover:text-blue-500 transition-colors"
+          >
+            Jair Olmos
+          </Link>
 
           {/* Links desktop */}
-          <div className="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+          <div className="hidden md:flex gap-6 text-sm font-medium">
             {links.map(({ name, href }) => (
               <Link
                 key={name}
                 href={href}
-                className={`hover:text-blue-600 transition ${
-            pathname === href ? "text-blue-700 font-bold" : ""
-                }`}
+                className={`text-[#0f172a]
+                            drop-shadow-[0_0_4px_rgba(255,255,255,0.9)]
+                            hover:text-blue-400 transition-colors
+                            ${
+                              href === "/blog" && pathname === "/blog"
+                                ? "text-blue-600 font-semibold"
+                                : ""
+                            }`}
               >
                 {name}
               </Link>
@@ -77,7 +87,9 @@ export default function Navbar() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             onClick={() => setMenuOpen(true)}
-            className="md:hidden text-2xl text-black dark:text-black hover:text-blue-700 transition-colors duration-200"
+            className="md:hidden text-2xl text-[#0f172a]
+                       drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]
+                       hover:text-blue-400 transition-colors"
           >
             <FiMenu />
           </button>
@@ -113,20 +125,29 @@ export default function Navbar() {
                          rounded-tr-3xl rounded-br-3xl overflow-y-auto flex flex-col space-y-6"
             >
               <button
+                aria-label="Cerrar menú"
                 onClick={() => setMenuOpen(false)}
-                className="self-end text-2xl text-black dark:text-black hover:text-blue-700"
+                className="self-end text-2xl text-[#0f172a]
+                           drop-shadow-[0_0_6px_rgba(255,255,255,0.9)]
+                           hover:text-blue-700"
               >
                 <FiX />
               </button>
 
-              <nav className="flex-1">
-                <ul className="space-y-6 text-lg font-medium text-black dark:text-black">
+              <nav id="mobile-menu" className="flex-1">
+                <ul className="space-y-6 text-lg font-medium">
                   {links.map(({ name, href }) => (
                     <li key={name}>
                       <Link
                         href={href}
                         onClick={() => setMenuOpen(false)}
-                        className={pathname === href ? "text-blue-700" : ""}
+                        className={`text-[#0f172a]
+                                    drop-shadow-[0_0_4px_rgba(255,255,255,0.9)]
+                                    ${
+                                      href === "/blog" && pathname === "/blog"
+                                        ? "text-blue-700"
+                                        : ""
+                                    }`}
                       >
                         {name}
                       </Link>
