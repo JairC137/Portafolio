@@ -12,7 +12,7 @@ export default function SimpleNavbar() {
         className="w-[80%] max-w-5xl backdrop-blur-md bg-white/30 border border-white/40 
         shadow-xl rounded-full px-8 py-3 flex items-center justify-between transition-all 
         duration-300 ease-in-out animate-fade-in-down"
-      >
+      > 
         <Link
           href="/"
           className="text-xl font-semibold text-gray-800 hover:text-blue-700 transition-colors duration-200"
