@@ -106,8 +106,7 @@ export default function LifeFitness() {
 
             {/* Copy */}
             <p className="text-gray-700 leading-relaxed">
-              Soy <strong>entrenador certificado</strong> y el gym es mi segundo
-              hogar. Entreno con mi mejor amigo casi a diario; la disciplina del
+              Soy <strong>entrenador certificado</strong> y el gym es mi lugar seguro. Entreno con mi mejor amigo; la disciplina del
               <em> strength &amp; hypertrophy</em> guía cómo enfrento los retos de
               desarrollo: <strong>constancia, técnica y mejora continua</strong>.
             </p>
@@ -115,9 +114,9 @@ export default function LifeFitness() {
             {/* Métricas */}
             <div className="mt-8 grid grid-cols-3 divide-x divide-neutral-200/60 text-center">
               {[
-                { value: "5x", label: "sesiones/sem" },
+                { value: "3x", label: "sesiones/sem" },
                 { value: "2", label: "certificaciones" },
-                { value: "8+ años", label: "entrenando" },
+                { value: "3+ años", label: "entrenando" },
               ].map((s) => (
                 <div key={s.label} className="px-2">
                   <div className="font-serif text-2xl text-gray-900">{s.value}</div>

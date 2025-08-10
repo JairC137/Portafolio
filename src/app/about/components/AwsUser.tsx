@@ -78,17 +78,15 @@ export default function AwsGroup() {
             <p className="text-gray-700 leading-relaxed">
               Miembro <strong>activo</strong> y <strong>apasionado</strong> de las comunidades <em>tech</em>.
               Participo en charlas, <em>meetups</em> y mentorías, compartiendo buenas prácticas de
-              <strong> AWS</strong>, arquitectura <em>serverless</em> e IA generativa. Impulso iniciativas que
-              ayudan a más personas a <strong>aprender, crecer y lanzar ideas</strong>.
+              <strong> AWS</strong>, arquitectura <em>serverless</em> e IA generativa. Impulso a más personas a <strong>aprender, crecer y lanzar ideas</strong>.
             </p>
 
             {/* Bullets */}
             <ul className="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-gray-700">
               {[
-                "Organización de talleres intro y avanzados",
-                "Acompañamiento a speakers y nuevos miembros",
-                "Proyectos colaborativos abiertos",
-                "Divulgación de buenas prácticas cloud",
+                "Integración con la comunidad",
+                "Acompañamiento a speakers",
+                "Participación activa en la comunidad",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
                   <FiCheckCircle className="mt-0.5 shrink-0" />
@@ -100,8 +98,7 @@ export default function AwsGroup() {
             {/* Métricas */}
             <div className="mt-8 grid grid-cols-3 divide-x divide-neutral-200/60 text-center">
               {[
-                { value: "15+", label: "eventos/año" },
-                { value: "50+", label: "mentorías" },
+                { value: "12+", label: "eventos/año" },
                 { value: "1,200+", label: "miembros" },
               ].map((s) => (
                 <div key={s.label} className="px-2">

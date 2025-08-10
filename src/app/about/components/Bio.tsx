@@ -29,7 +29,7 @@ export default function Bio() {
       >
         <div className="w-full max-w-3xl rounded-3xl bg-white/60 backdrop-blur-md p-10 text-center lg:p-16">
           <span className="tracking-widest text-xs uppercase text-gray-700">
-            Cloud • Data • UX
+            Cloud • Data • IA
           </span>
 
           <h1 className="mt-4 font-serif text-5xl sm:text-6xl leading-snug text-gray-900">
@@ -37,17 +37,17 @@ export default function Bio() {
           </h1>
 
           <p className="mt-8 text-base sm:text-lg text-gray-800 leading-relaxed">
-            Soy <strong>ingeniero de datos y desarrollador full-stack </strong>
+            Soy <strong>ingeniero en computación</strong>
             que cree firmemente en el poder de la información para transformar
             negocios y experiencias. Experimento a diario con IA generativa,
-            arquitecturas serverless y visualizaciones interactivas con un sólo
+            arquitecturas limpias y visualizaciones interactivas con un sólo
             objetivo: <em>convertir ideas complejas en soluciones claras</em>.
           </p>
 
           <p className="mt-6 text-base sm:text-lg text-gray-800 leading-relaxed">
-            Fuera del teclado lidero sesiones en
+            Fuera del teclado soy miembro activo de los grupos tech de la ciudad de mexico
             <strong className="mx-1">Ajolotes en la Nube</strong>, entreno
-            levantamiento olímpico como coach certificado y promuevo valores
+            pesas como coach certificado y promuevo valores
             deportivos desde la dirección de la filial
             <strong className="mx-1">Cañoneros — Mazatlán FC</strong>.
           </p>
