@@ -37,7 +37,7 @@ export default function Bio() {
           </h1>
 
           <p className="mt-8 text-base sm:text-lg text-gray-800 leading-relaxed">
-            Soy <strong>ingeniero en computación</strong>
+            Soy <strong>ingeniero en computación </strong>
             que cree firmemente en el poder de la información para transformar
             negocios y experiencias. Experimento a diario con IA generativa,
             arquitecturas limpias y visualizaciones interactivas con un sólo

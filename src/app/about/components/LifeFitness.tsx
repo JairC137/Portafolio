@@ -106,7 +106,14 @@ export default function LifeFitness() {
 
             {/* Copy */}
             <p className="text-gray-700 leading-relaxed">
-              Soy <strong>entrenador certificado</strong> y el gym es mi lugar seguro. Entreno con mi mejor amigo; la disciplina del
+                Soy <a
+                href="/CertificadoEntrenador.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-semibold text-black hover:text-gray-700 transition-colors"
+            >
+                 entrenador certificado
+            </a> y el gym es mi lugar seguro. Entreno con mi mejor amigo; la disciplina del
               <em> strength &amp; hypertrophy</em> guía cómo enfrento los retos de
               desarrollo: <strong>constancia, técnica y mejora continua</strong>.
             </p>
