@@ -40,7 +40,7 @@ export default function Bio() {
             Soy <strong>ingeniero en computación </strong>
             que cree firmemente en el poder de la información para transformar
             negocios y experiencias. Experimento a diario con IA generativa,
-            arquitecturas limpias y visualizaciones interactivas con un sólo
+            arquitecturas limpias y visualizaciones interactivas con un sólos
             objetivo: <em>convertir ideas complejas en soluciones claras</em>.
           </p>
 

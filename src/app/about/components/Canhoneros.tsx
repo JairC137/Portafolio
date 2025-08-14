@@ -19,10 +19,10 @@ const stats = [
 ];
 
 const timeline = [
-  { year: "2021", text: "Inicio como embajador y enlace con la comunidad." },
-  { year: "2022", text: "Clínicas abiertas y tryouts regionales." },
-  { year: "2023", text: "Programa de becas deportivas y visorías." },
-  { year: "2024", text: "Expansión de categorías y staff técnico." },
+  { year: "2024", text: "Inicio como embajador y enlace con la comunidad." },
+  { year: "2025", text: "Clínicas abiertas y tryouts regionales." },
+  { year: "2025", text: "Programa de visorías." },
+  { year: "2025", text: "Expansión de categorías y staff técnico." },
 ];
 
 export default function Canhoneros() {
